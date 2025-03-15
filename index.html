@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Zain Shabir</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section class="landing" id="home">
+        <div class="intro-container">
+            <div class="intro-text">
+                <h1 class="typewriter">Hi, I'm Zain</h1>
+                <h1 class="typewriter">Frontend Web Developer</h1>
+            </div>
+            <div class="intro-image">
+                <img src="WhatsApp Image 2025-02-07 at 8.38.10 AM.jpeg" alt="Zain Shabir" class="profile-pic animated-image">
+            </div>
+        </div>
+    </section>
+    
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <div class="about-cards">
+            <div class="about-card">
+                <h3>Who I Am</h3>
+                <p>I am a passionate frontend developer specializing in HTML, CSS, and JavaScript, creating modern, responsive, and interactive websites.</p>
+            </div>
+            <div class="about-card">
+                <h3>My Skills</h3>
+                <ul>
+                    <li>HTML, CSS, JavaScript</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section class="projects" id="projects">
+        <h2>Projects</h2>
+        <div class="project-cards">
+            <div class="project-card">
+                <h3>Project 1</h3>
+                <p>A modern website with smooth animations and responsive design.</p>
+                <button class="view-project-btn">View Project</button>
+            </div>
+            <div class="project-card">
+                <h3>Project 2</h3>
+                <p>An interactive JavaScript-based web application.</p>
+                <button class="view-project-btn">View Project</button>
+            </div>
+            <div class="project-card">
+                <h3>Project 3</h3>
+                <p>A custom-built online store with dynamic product listings.</p>
+                <button class="view-project-btn">View Project</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-info">
+            <div class="contact-card">
+                <h3>Get in Touch</h3>
+                <p>If you would like to discuss a project or just say hi, feel free to contact me.</p>
+                <p>WhatsApp: <a href="tel:+923227707335">03227707335</a></p>
+                <p>Email: <a href="mailto:zain@example.com">zainshabir510@gmail.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <script>document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll(".slide-in");
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, { threshold: 0.1 });
+    
+        cards.forEach(card => observer.observe(card));
+    
+        // Navbar Animation on Scroll
+        let lastScrollTop = 0;
+        const navbar = document.querySelector(".navbar");
+    
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                navbar.style.transform = "translateY(-100%)"; // Hide Navbar on Scroll Down
+            } else {
+                navbar.style.transform = "translateY(0)"; // Show Navbar on Scroll Up
+            }
+            lastScrollTop = scrollTop;
+        });
+    });
+    </script>
+</body>
+</html>
